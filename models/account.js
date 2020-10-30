@@ -66,8 +66,61 @@ const login = async (email, password, token) => {
     });
 };
 
+const getOwnUser = async (token) => {
+    return new Promise(((resolve) => {
+        try {
+            accountQueries.getAccountByToken(token).then(value => {
+                if (value.length > 0) {
+                    resolve(value);
+                } else {
+                    resolve(new Error("You are not allowed to do this!"));
+                }
+            });
+        } catch (error) {
+            return resolve(error);
+        }
+    }));
+};
+
+const logout = async (email) => {
+    return new Promise(((resolve => {
+        try {
+            accountQueries.updateTokenByEmail(email, null).then(updateResult => {
+                if (updateResult instanceof Error) {
+                    resolve(updateResult)
+                }else{
+                    console.log(updateResult);
+                    resolve();
+                }
+            });
+        }catch (error) {
+            return resolve(error);
+        }
+    })))
+}
+
+const updateApiKey = async (email, apiKey) => {
+    return new Promise(((resolve => {
+        try {
+            accountQueries.updateApiKeyByEmail(email, apiKey).then(updateResult => {
+                if (updateResult instanceof Error) {
+                    resolve(updateResult)
+                }else{
+                    console.log(updateResult);
+                    resolve();
+                }
+            });
+        }catch (error) {
+            return resolve(error);
+        }
+    })))
+}
+
 module.exports = {
     generateAuthToken,
+    getOwnUser,
     register,
-    login
+    login,
+    logout,
+    updateApiKey
 }

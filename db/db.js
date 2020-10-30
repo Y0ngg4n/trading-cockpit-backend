@@ -21,7 +21,7 @@ const createTables = async () => {
                 function (next) {
                     client.query("CREATE TABLE IF NOT EXISTS accounts (uuid UUID PRIMARY KEY DEFAULT gen_random_uuid(), " +
                         "email STRING NOT NULL UNIQUE CHECK (email LIKE '%@%'), password STRING NOT NULL," +
-                        "token STRING);", next);
+                        "token STRING, apikey string);", next);
                 },
             ]).then(value => {
                 done();

@@ -99,9 +99,32 @@ const updateTokenByEmail = async (email, token) => {
     });
 };
 
+const updateApiKeyByEmail = async (email, token) => {
+    return await new Promise((resolve) => {
+        db.pool.connect(function (err, client, done) {
+            db.logErrors(err, client, done);
+            client.query({
+                text: "UPDATE accounts SET apikey=$1 WHERE email=$2",
+                values: [token, email],
+                callback: function (err, results) {
+                    done();
+                    if (err) {
+                        resolve(err);
+                    } else if (results) {
+                        resolve(results.rows);
+                    } else {
+                        resolve();
+                    }
+                }
+            });
+        });
+    });
+};
+
 module.exports = {
     getAccountByEmail,
     getAccountByToken,
     registerNewAccount,
-    updateTokenByEmail
+    updateTokenByEmail,
+    updateApiKeyByEmail
 }

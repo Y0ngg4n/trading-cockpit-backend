@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const accounts = require("../models/account");
+const auth = require("../middleware/auth");
 
 router.post('/accounts/register', async (req, res) => {
     // Create a new user
@@ -39,12 +40,44 @@ router.post('/accounts/login', async (req, res) => {
     }
 });
 
-const getUserData = (userAccount, token) => {
+router.get('/accounts/me', auth, async (req, res) => {
+    try {
+        if (req.user instanceof Error) {
+            throw req.user;
+        } else {
+            return res.status(200).send(getUserData(req.user, req.token));
+        }
+    } catch (error) {
+        console.log(error);
+        return res.status(400).send(error);
+    }
+});
+
+router.post('/accounts/update/apikey', auth, async (req, res) => {
+    try {
+        const {apikey} = req.body;
+        console.log(apikey)
+        if (req.user instanceof Error) {
+            throw req.user;
+        } else {
+            await accounts.updateApiKey(req.user.email, apikey).then(value => {
+                return res.status(200).send();
+            });
+        }
+    } catch (error) {
+        console.log(error);
+        return res.status(400).send(error);
+    }
+});
+
+
+const getUserData = (userAccount, token, apikey) => {
     return {
         uuid: userAccount.uuid,
         email: userAccount.email,
         nickname: userAccount.nickname,
         token: token,
+        apikey: userAccount.apikey
     };
 };
 
