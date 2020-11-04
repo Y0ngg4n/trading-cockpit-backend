@@ -56,7 +56,6 @@ router.get('/accounts/me', auth, async (req, res) => {
 router.post('/accounts/update/apikey', auth, async (req, res) => {
     try {
         const {apikey} = req.body;
-        console.log(apikey)
         if (req.user instanceof Error) {
             throw req.user;
         } else {

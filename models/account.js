@@ -42,7 +42,6 @@ const login = async (email, password, token) => {
                 if (!account) {
                     resolve(new Error("Invalid login credentials"));
                 } else {
-                    console.log(password)
                     bcrypt.compare(password, account.password).then(result => {
                         if (result) {
                             accountQueries.updateTokenByEmail(email, token).then(updateResult => {
@@ -89,7 +88,6 @@ const logout = async (email) => {
                 if (updateResult instanceof Error) {
                     resolve(updateResult)
                 }else{
-                    console.log(updateResult);
                     resolve();
                 }
             });
@@ -106,7 +104,6 @@ const updateApiKey = async (email, apiKey) => {
                 if (updateResult instanceof Error) {
                     resolve(updateResult)
                 }else{
-                    console.log(updateResult);
                     resolve();
                 }
             });

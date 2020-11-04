@@ -11,10 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae839e12-afbd-49cd-a3e6-8c09993afed9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/middleware/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/watchlist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/watchlist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/watchlist.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/account.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/db.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/account.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/account.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/account.js" afterDir="false" />
@@ -40,6 +41,9 @@
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="2" />
   </component>
+  <component name="KotlinMultiplatform">
+    <executables />
+  </component>
   <component name="ProjectId" id="1jSo6cBm7PEJTa9WgclKKG1mEck" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -49,13 +53,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="14.13.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="14.14.5" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.12.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.6" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -64,6 +72,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Node.js.bin\www">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -94,6 +113,13 @@
       <workItem from="1603868591952" duration="11798000" />
       <workItem from="1603954896436" duration="1237000" />
       <workItem from="1604044359263" duration="10336000" />
+      <workItem from="1604227183959" duration="4489000" />
+      <workItem from="1604261920699" duration="351000" />
+      <workItem from="1604262421730" duration="1387000" />
+      <workItem from="1604313164916" duration="2879000" />
+      <workItem from="1604344661217" duration="1301000" />
+      <workItem from="1604398187764" duration="3154000" />
+      <workItem from="1604486005217" duration="5099000" />
     </task>
     <servers />
   </component>
@@ -121,26 +147,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/1920.-104.1920.1040@0.0.1536.824" timestamp="1603811266425" />
-    <state width="1493" height="203" key="GridCell.Tab.0.bottom" timestamp="1604070543389">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1320" height="164" key="GridCell.Tab.0.bottom" timestamp="1604492060604">
+      <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state width="1493" height="203" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.-104.1920.1040@0.0.1536.824" timestamp="1603815181396" />
     <state width="1493" height="203" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604070543389" />
-    <state width="1493" height="203" key="GridCell.Tab.0.center" timestamp="1604070543389">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1320" height="164" key="GridCell.Tab.0.bottom/0.25.1366.743@0.25.1366.743" timestamp="1604492060604" />
+    <state width="1320" height="164" key="GridCell.Tab.0.center" timestamp="1604492060603">
+      <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state width="1493" height="203" key="GridCell.Tab.0.center/0.0.1536.824/1920.-104.1920.1040@0.0.1536.824" timestamp="1603815181396" />
     <state width="1493" height="203" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604070543389" />
-    <state width="1493" height="203" key="GridCell.Tab.0.left" timestamp="1604070543389">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1320" height="164" key="GridCell.Tab.0.center/0.25.1366.743@0.25.1366.743" timestamp="1604492060603" />
+    <state width="1320" height="164" key="GridCell.Tab.0.left" timestamp="1604492060603">
+      <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state width="1493" height="203" key="GridCell.Tab.0.left/0.0.1536.824/1920.-104.1920.1040@0.0.1536.824" timestamp="1603815181396" />
     <state width="1493" height="203" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604070543389" />
-    <state width="1493" height="203" key="GridCell.Tab.0.right" timestamp="1604070543389">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1320" height="164" key="GridCell.Tab.0.left/0.25.1366.743@0.25.1366.743" timestamp="1604492060603" />
+    <state width="1320" height="164" key="GridCell.Tab.0.right" timestamp="1604492060604">
+      <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state width="1493" height="203" key="GridCell.Tab.0.right/0.0.1536.824/1920.-104.1920.1040@0.0.1536.824" timestamp="1603815181396" />
     <state width="1493" height="203" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604070543389" />
+    <state width="1320" height="164" key="GridCell.Tab.0.right/0.25.1366.743@0.25.1366.743" timestamp="1604492060604" />
     <state width="1493" height="252" key="GridCell.Tab.1.bottom" timestamp="1603814364386">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -189,10 +219,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="252" key="GridCell.Tab.3.right/0.0.1536.824/1920.-104.1920.1040@0.0.1536.824" timestamp="1603814364386" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1604063814284">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="378" y="194" key="run.anything.popup" timestamp="1604486572601">
+      <screen x="0" y="25" width="1366" height="743" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824/1920.-104.1920.1040@0.0.1536.824" timestamp="1603814098130" />
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1604063814284" />
+    <state x="378" y="194" key="run.anything.popup/0.25.1366.743@0.25.1366.743" timestamp="1604486572601" />
   </component>
 </project>

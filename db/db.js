@@ -23,6 +23,10 @@ const createTables = async () => {
                         "email STRING NOT NULL UNIQUE CHECK (email LIKE '%@%'), password STRING NOT NULL," +
                         "token STRING, apikey string);", next);
                 },
+                function (results, next) {
+                    client.query("CREATE TABLE IF NOT EXISTS watchlists (uuid UUID PRIMARY KEY DEFAULT gen_random_uuid(), " +
+                        "name STRING NOT NULL, account UUID REFERENCES accounts (uuid) ON DELETE CASCADE ON UPDATE CASCADE);", next);
+                }
             ]).then(value => {
                 done();
                 if (value instanceof Error) {
